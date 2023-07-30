@@ -1,0 +1,2 @@
+hjson==3.1.0
+cmsis-svd-codec==1.0.0

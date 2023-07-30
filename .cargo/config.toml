@@ -1,0 +1,20 @@
+# Copyright lowRISC contributors.
+# Licensed under the Apache License, Version 2.0, see LICENSE for details.
+# SPDX-License-Identifier: Apache-2.0
+
+[build]
+target = "riscv32imc-unknown-none-elf"
+
+[target.riscv32imc-unknown-none-elf]
+runner = "../../util/load_demo_system.sh run"
+rustflags = [
+  # This is provided by earlgrey-pac crate build.rs.
+  "-C", "link-arg=-Tearlgrey_memory.x",
+
+  # This is provided by the riscv-rt crate build.rs.
+  "-C", "link-arg=-Tlink.x",
+]
+
+[unstable]
+build-std = ["core"]
+

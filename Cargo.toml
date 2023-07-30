@@ -1,0 +1,8 @@
+[workspace]
+members = [
+    "earlgrey-pac",
+    "examples/hello_world",
+]
+
+[profile.release]
+debug = true
